@@ -32,7 +32,7 @@ function CheckoutProduct({id, image, title, price, rating}) {
                     {
                         Array(rating)
                         .fill()
-                        .map((_, i) => (<p>⭐</p>))
+                        .map((_, i) => (<p>🌟</p>))
                     }
                 </div>
                 <button onClick={removeFromBasket}>

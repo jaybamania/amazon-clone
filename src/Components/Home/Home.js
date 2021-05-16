@@ -10,6 +10,7 @@ function Home() {
                 <img
                     className="home__image"
                     src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonVideo/2021/X-site/Multititle/May/M16/1500x600_Hero-Tall_JPN._CB669022949_.jpg"
+                    alt="Home Wallpaper"
                 />
 
                 <div className="home__row">

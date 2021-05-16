@@ -1,18 +1,38 @@
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import './Login.css'
+import { auth } from '../../firebase'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 function Login() {
 
+    const history = useHistory()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const signIn = e =>{
+    const signIn = (e) =>{
         e.preventDefault()
+
+        auth
+            .signInWithEmailAndPassword(email,password)
+            .then(auth =>{
+                history.push('/')
+            })
+            .catch(error => alert(error.message))
     }
 
     const register = e =>{
         e.preventDefault()
+
+        auth
+        .createUserWithEmailAndPassword(email,password)
+        .then((auth) => {
+            console.log(auth)
+            if(auth){
+                history.push('/')
+            }
+        })
+        .catch(error => alert(error.message))
     }
 
     return (
@@ -22,6 +42,8 @@ function Login() {
                     className="login__logo"
                     // src="https://p7.hiclipart.com/preview/480/274/568/amazon-com-logo-brand-aws-turkey-symbol-amazon-com.jpg"
                     src="https://indianapublicmedia.org/images/news-images/amazon-logo.jpg"
+
+                    alt="Amazon Logo"
                 />
             </Link>
 
@@ -30,7 +52,7 @@ function Login() {
                 <form>
                     <h5>Email </h5>
                     <input 
-                        type="text" 
+                        type="email" 
                         value={email} 
                         onChange={e => setEmail(e.target.value)}    
                     />

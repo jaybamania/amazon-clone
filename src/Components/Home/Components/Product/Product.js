@@ -6,8 +6,6 @@ function Product({id,title, image, price, rating}) {
 
     const [{basket}, dispatch] = useStateValue()
 
-    console.log('this is the basket >>> ',basket)
-
     const addToBasket =() =>{
         //dispatch the item into the data layer
 
@@ -43,7 +41,7 @@ function Product({id,title, image, price, rating}) {
             </div>
             <img
                 src={image}
-                alt=""
+                alt="Product"
             />
             <button onClick={addToBasket}>Add to Basket</button>
         </div>

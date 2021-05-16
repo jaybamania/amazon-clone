@@ -48,9 +48,10 @@
 }
 
 .login__signInButton{
-    background: #f3d078;
+    /* background: #f3d078;
     background: -webkit-linear-gradient(top,#f7dfa5,#f0c14b);
-    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b); */
+    background: #f0c14b;
     border-radius: 2px;
     width: 100%;
     height: 30px;
